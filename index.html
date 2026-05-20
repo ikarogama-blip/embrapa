@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embrapa | Agricultura Familiar Tech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="#inicio" class="logo" aria-label="Embrapa Home">Embrapa</a>
+                <span class="logo-sub">Agricultura Familiar Tech</span>
+            </div>
+            
+            <div class="accessibility-controls">
+                <button id="btn-contraste" class="btn-access" title="Alternar Alto Contraste" aria-label="Alternar Alto Contraste">🌓 Alto Contraste</button>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-principal">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav id="nav-principal" class="nav-menu">
+                <ul>
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#tecnologias" class="nav-link">Tecnologias</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#solicitacao" class="nav-link">Solicitar Cartilhas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+
+        <section id="inicio" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>Inovação tecnológica impulsionando a agricultura familiar</h1>
+                    <p>Conheça as soluções sustentáveis da Embrapa para aumentar a produtividade do seu cultivo com respeito ao meio ambiente.</p>
+                    <a href="#tecnologias" class="btn btn-primary">Ver Tecnologias</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&w=600&q=80" alt="Plantação de hortaliças verdejante disposta em fileiras organizadas com sistema de irrigação" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <section id="tecnologias" class="tecnologias-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2>Tecnologias Disponíveis</h2>
+                    <p>Soluções práticas desenvolvidas por cientistas e agrônomos para o pequeno produtor rural.</p>
+                </header>
+
+                <div class="cards-grid">
+                    <article class="tech-card">
+                        <div class="card-tag">Manejo Sustentável</div>
+                        <h3>Manejo Ecológico do Solo</h3>
+                        <p>Técnicas de adubação verde, rotação de culturas e cobertura morta para recuperar e enriquecer os nutrientes da terra de forma orgânica.</p>
+                    </article>
+
+                    <article class="tech-card">
+                        <div class="card-tag">Recursos Hídricos</div>
+                        <h3>Irrigação de Baixo Custo</h3>
+                        <p>Sistemas eficientes de gotejamento utilizando materiais recicláveis e de fácil acesso, otimizando o uso da água em períodos de estiagem.</p>
+                    </article>
+
+                    <article class="tech-card">
+                        <div class="card-tag">Defesa Biológica</div>
+                        <h3>Controle Biológico de Pragas</h3>
+                        <p>Uso de inimigos naturais e defensivos caseiros de base ecológica para combater insetos e doenças sem contaminar o ecossistema.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="sobre-section">
+            <div class="container sobre-container">
+                <div class="sobre-content">
+                    <h2>Fortalecendo o Homem do Campo</h2>
+                    <p>A Empresa Brasileira de Pesquisa Agropecuária (Embrapa) atua na vanguarda da pesquisa científica para trazer viabilidade econômica e sustentabilidade à agricultura familiar.</p>
+                    <p>Nossa missão neste portal é encurtar a distância entre os laboratórios de pesquisa e as pequenas propriedades rurais de todo o Brasil, entregando conhecimento simplificado e aplicável no dia a dia da roça.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solicitacao" class="solicitacao-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2>Solicitação de Cartilhas Técnicas</h2>
+                    <p>Insira seus dados abaixo para receber gratuitamente os manuais completos e ilustrados direto em seu e-mail.</p>
+                </header>
+
+                <div class="form-wrapper">
+                    <form id="form-solicitacao" novalidate>
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" placeholder="Ex: João da Silva" required minlength="3">
+                            <span class="error-msg" id="error-nome" aria-live="polite">Por favor, preencha seu nome completo (mínimo de 3 letras).</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estado">Estado (UF)</label>
+                            <select id="estado" name="estado" required>
+                                <option value="" disabled selected>Selecione seu Estado</option>
+                                <option value="AC">Acre</option> <option value="AL">Alagoas</option> <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option> <option value="BA">Bahia</option> <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option> <option value="ES">Espírito Santo</option> <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option> <option value="MT">Mato Grosso</option> <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option> <option value="PA">Pará</option> <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option> <option value="PE">Pernambuco</option> <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option> <option value="RN">Rio Grande do Norte</option> <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option> <option value="RR">Roraima</option> <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option> <option value="SE">Sergipe</option> <option value="TO">Tocantins</option>
+                            </select>
+                            <span class="error-msg" id="error-estado" aria-live="polite">Selecione o estado onde fica sua propriedade.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Endereço de E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="nome@exemplo.com" required>
+                            <span class="error-msg" id="error-email" aria-live="polite">Insira um endereço de e-mail válido (ex: joao@campo.com).</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tecnologia">Cartilha de Tecnologia Desejada</label>
+                            <select id="tecnologia" name="tecnologia" required>
+                                <option value="" disabled selected>Escolha o tema principal</option>
+                                <option value="solo">Manejo Ecológico do Solo</option>
+                                <option value="irrigacao">Irrigação de Baixo Custo</option>
+                                <option value="pragas">Controle Biológico de Pragas</option>
+                            </select>
+                            <span class="error-msg" id="error-tecnologia" aria-live="polite">Selecione pelo menos um tema de interesse.</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-submit">Enviar Solicitação</button>
+                    </form>
+
+                    <div id="painel-sucesso" class="success-alert" style="display: none;" role="alert">
+                        <h3>✓ Solicitação Enviada!</h3>
+                        <p>O manual técnico em formato digital foi encaminhado com sucesso para o e-mail informado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Empresa Brasileira de Pesquisa Agropecuária (Embrapa). Todos os direitos reservados.</p>
+            <p>Portal Temático desenvolvido para o Portfólio de Tecnologias da Agricultura Familiar.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

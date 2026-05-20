@@ -1,0 +1,496 @@
+/* ==========================================================================
+   RESET E DESIGN SYSTEM INSTITUCIONAL (EMBRAPA)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --embrapa-blue: #004B82;
+    --embrapa-blue-hover: #00365D;
+    --embrapa-green: #38761D;
+    --embrapa-green-light: #E2EFDA;
+    --text-charcoal: #2B2B2B;
+    --bg-light: #F8FAFC;
+    --bg-white: #FFFFFF;
+    --border-gray: #E2E8F0;
+    --error-red: #D9381E;
+    --success-green: #1F6030;
+    --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+}
+
+/* Alto Contraste (Acessibilidade) */
+body.high-contrast {
+    --embrapa-blue: #000000;
+    --embrapa-blue-hover: #1a1a1a;
+    --embrapa-green: #FFFF00;
+    --embrapa-green-light: #1a1a1a;
+    --text-charcoal: #FFFFFF;
+    --bg-light: #000000;
+    --bg-white: #121212;
+    --border-gray: #FFFFFF;
+    --error-red: #FF3333;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-charcoal);
+    background-color: var(--bg-light);
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--embrapa-blue);
+    font-weight: 700;
+}
+
+body.high-contrast h1, 
+body.high-contrast h2, 
+body.high-contrast h3 {
+    color: #FFFF00 !important;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+section {
+    padding: 90px 0;
+}
+
+/* Link invisível para acessibilidade de teclado */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    background: var(--embrapa-green);
+    color: white;
+    padding: 10px 15px;
+    z-index: 2000;
+    transition: top 0.2s;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   CABEÇALHO FIXO COM FLEXBOX
+   ========================================================================== */
+.main-header {
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 4px solid var(--embrapa-green);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+}
+
+.logo-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--embrapa-blue);
+    letter-spacing: -1px;
+}
+
+.logo-sub {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--embrapa-green);
+    text-transform: uppercase;
+}
+
+.accessibility-controls {
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.btn-access {
+    background: none;
+    border: 1px solid var(--embrapa-blue);
+    color: var(--embrapa-blue);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.btn-access:hover {
+    background-color: var(--embrapa-blue);
+    color: var(--bg-white);
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-charcoal);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 8px 0;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--embrapa-green);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--embrapa-blue);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   SEÇÃO HERO (DUAS COLUNAS COM FLEXBOX)
+   ========================================================================== */
+.hero-section {
+    background-color: var(--bg-white);
+    padding-top: 170px;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+    line-height: 1.25;
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    color: #4A5568;
+}
+
+body.high-contrast .hero-content p {
+    color: #FFFFFF;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--embrapa-green);
+    color: var(--bg-white);
+}
+
+.btn-primary:hover {
+    background-color: #2b5c16;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SEÇÃO DE TECNOLOGIAS (CARDS PREMIUM EM GRID)
+   ========================================================================== */
+.tecnologias-section {
+    background-color: var(--bg-light);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.tech-card {
+    background-color: var(--bg-white);
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-subtle);
+    border-top: 5px solid var(--embrapa-green);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-tag {
+    display: inline-block;
+    background-color: var(--embrapa-green-light);
+    color: var(--embrapa-green);
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.tech-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 15px;
+}
+
+.tech-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4A5568;
+}
+
+body.high-contrast .tech-card p {
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   SEÇÃO SOBRE INSTITUCIONAL
+   ========================================================================== */
+.sobre-section {
+    background: linear-gradient(rgba(0, 75, 130, 0.92), rgba(0, 75, 130, 0.96)), url('https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: var(--bg-white);
+}
+
+body.high-contrast .sobre-section {
+    background: var(--bg-light);
+    color: var(--text-charcoal);
+}
+
+.sobre-container {
+    max-width: 850px;
+    text-align: center;
+}
+
+.sobre-content h2 {
+    color: var(--bg-white);
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+body.high-contrast .sobre-content h2 {
+    color: #FFFF00;
+}
+
+.sobre-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   FORMULÁRIO DE SOLICITAÇÃO (PAINEL CENTRALIZADO)
+   ========================================================================== */
+.solicitacao-section {
+    background-color: var(--bg-white);
+}
+
+.form-wrapper {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--bg-light);
+    padding: 45px;
+    border-radius: 12px;
+    border: 1px solid var(--border-gray);
+    box-shadow: var(--shadow-subtle);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    background-color: var(--bg-white);
+    color: inherit;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: var(--embrapa-blue);
+    box-shadow: 0 0 0 3px rgba(0, 75, 130, 0.15);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--embrapa-blue);
+    color: var(--bg-white);
+    border: none;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: var(--embrapa-blue-hover);
+}
+
+.error-msg {
+    display: none;
+    color: var(--error-red);
+    font-size: 0.85rem;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.form-group.has-error input, 
+.form-group.has-error select {
+    border-color: var(--error-red);
+    background-color: #FFF5F5;
+}
+
+.form-group.has-error .error-msg {
+    display: block;
+}
+
+.success-alert {
+    background-color: var(--embrapa-green-light);
+    border-left: 6px solid var(--embrapa-green);
+    padding: 30px;
+    border-radius: 6px;
+    color: var(--success-green);
+    text-align: center;
+}
+
+.success-alert h3 {
+    color: var(--success-green);
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   RODAPÉ E RESPONSIVIDADE
+   ========================================================================== */
+.main-footer {
+    background-color: #1E293B;
+    color: #94A3B8;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 4px solid var(--embrapa-blue);
+}
+
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-white);
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        padding: 30px 0;
+        border-bottom: 3px solid var(--embrapa-green);
+    }
+    .nav-menu.is-active {
+        display: block;
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .form-wrapper {
+        padding: 30px 20px;
+    }
+}
